@@ -18,10 +18,26 @@ body {
 
 #anim {
   display: flex;
-  justify-content: center; /* Aligns the Lottie player to the bottom */
-  align-items: flex-end; /* Aligns the content to the bottom */
-  height: 100vh; /* Ensure it takes full height */
-  padding-top: 200px; /* Adjust to position the Lottie player nicely */
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  padding-top: 200px; /* For larger screens */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+
+@media (max-width: 1024px) {
+  #anim {
+    padding-top: 100px; /* Adjust padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #anim {
+    padding-top: 50px; /* Further reduce padding for small screens */
+    height: auto;
+  }
 }
 
 #woman {
@@ -30,8 +46,15 @@ body {
 }
 
 img {
+  width: 100%; /* Make it responsive */
+  height: auto; /* Keep aspect ratio */
   max-width: 100%;
-  height: auto;
+}
+
+@media (max-width: 768px) {
+  .skyscraper-svg {
+    display: none; /* Remove this to make it visible on smaller screens */
+  }
 }
 
 #logo {
@@ -64,8 +87,18 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  display: none;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav ul li {
+    width: 100%; /* Full-width items on small screens */
+  }
 }
 
 nav ul {
@@ -76,9 +109,6 @@ nav ul {
   background-color: #333;
 }
 
-nav ul li {
-  float: left;
-}
 
 nav ul li a {
   display: block;
@@ -105,4 +135,24 @@ section {
   width: 100%;
   background-color: #e9ecef;
   border-bottom: 1px solid #ccc;
+}
+
+@media (max-width: 1024px) {
+  #builds {
+    padding-bottom: 100px; /* Adjust for medium screens */
+  }
+
+  .phone-image {
+    width: 50%; /* Adjust image size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #builds {
+    padding-bottom: 50px; /* Further adjust for small screens */
+  }
+
+  .phone-image {
+    width: 80%; /* Full-width images on small screens */
+  }
 }

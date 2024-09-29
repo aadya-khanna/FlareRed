@@ -625,11 +625,6 @@ video {
   margin-right: auto;
 }
 
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -676,6 +671,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .min-h-screen {
@@ -764,6 +763,14 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -800,10 +807,6 @@ video {
   border-top-width: 1px;
 }
 
-.border-t-4 {
-  border-top-width: 4px;
-}
-
 .border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
@@ -814,9 +817,9 @@ video {
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
-.border-gray-800 {
+.border-red-500 {
   --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .bg-cardinal {
@@ -849,30 +852,22 @@ video {
   background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
-.bg-red-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(246 250 253 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'street\.svg\'\)\] {
-  background-image: url('street.svg');
-}
-
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'streetdark\.svg\'\)\] {
-  background-image: url('streetdark.svg');
+.bg-yellow-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 240 138 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'streetdark\.png\'\)\] {
   background-image: url('streetdark.png');
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .from-rose-600 {
@@ -888,6 +883,11 @@ video {
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-12 {
@@ -979,13 +979,13 @@ video {
   line-height: 2.25rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -1008,12 +1008,12 @@ video {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-extrabold {
   font-weight: 800;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .leading-tight {
@@ -1113,13 +1113,28 @@ body {
 #anim {
   display: flex;
   justify-content: center;
-  /* Aligns the Lottie player to the bottom */
   align-items: flex-end;
-  /* Aligns the content to the bottom */
   height: 100vh;
-  /* Ensure it takes full height */
   padding-top: 200px;
-  /* Adjust to position the Lottie player nicely */
+  /* For larger screens */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+  #anim {
+    padding-top: 100px;
+    /* Adjust padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #anim {
+    padding-top: 50px;
+    /* Further reduce padding for small screens */
+    height: auto;
+  }
 }
 
 #woman {
@@ -1128,8 +1143,18 @@ body {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
+  /* Make it responsive */
   height: auto;
+  /* Keep aspect ratio */
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .skyscraper-svg {
+    display: none;
+    /* Remove this to make it visible on smaller screens */
+  }
 }
 
 #logo {
@@ -1164,8 +1189,19 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  display: none;
   z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  nav ul li {
+    width: 100%;
+    /* Full-width items on small screens */
+  }
 }
 
 nav ul {
@@ -1174,10 +1210,6 @@ nav ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
-}
-
-nav ul li {
-  float: left;
 }
 
 nav ul li a {
@@ -1207,6 +1239,30 @@ section {
   border-bottom: 1px solid #ccc;
 }
 
+@media (max-width: 1024px) {
+  #builds {
+    padding-bottom: 100px;
+    /* Adjust for medium screens */
+  }
+
+  .phone-image {
+    width: 50%;
+    /* Adjust image size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #builds {
+    padding-bottom: 50px;
+    /* Further adjust for small screens */
+  }
+
+  .phone-image {
+    width: 80%;
+    /* Full-width images on small screens */
+  }
+}
+
 .hover\:bg-red-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -1228,6 +1284,10 @@ section {
 }
 
 @media (min-width: 640px) {
+  .sm\:h-60 {
+    height: 15rem;
+  }
+
   .sm\:max-w-xl {
     max-width: 36rem;
   }
@@ -1235,6 +1295,11 @@ section {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
   .sm\:text-6xl {
@@ -1251,6 +1316,18 @@ section {
 @media (min-width: 768px) {
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:h-72 {
+    height: 18rem;
+  }
+
+  .md\:h-80 {
+    height: 20rem;
   }
 
   .md\:w-1\/2 {
@@ -1292,6 +1369,11 @@ section {
     line-height: 2.25rem;
   }
 
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .md\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
@@ -1304,6 +1386,14 @@ section {
 }
 
 @media (min-width: 1024px) {
+  .lg\:h-80 {
+    height: 20rem;
+  }
+
+  .lg\:h-96 {
+    height: 24rem;
+  }
+
   .lg\:max-w-3xl {
     max-width: 48rem;
   }
@@ -1329,8 +1419,20 @@ section {
     padding-right: 0.5rem;
   }
 
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
   .lg\:text-8xl {
     font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:text-7xl {
+    font-size: 4.5rem;
     line-height: 1;
   }
 }
