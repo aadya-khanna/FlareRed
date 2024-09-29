@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Flare Red</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+  <script src="https://unpkg.com/@propelauth/javascript@latest"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const auth = createPropelAuth({
+        authUrl: "https://7792933780.propelauthtest.com", // Replace with your Auth URL
+        apiKey: "5d58b44115ff2c2cd064814bf9071fc40b9ea8104b626908bb3e8b3a659acd09e0c463eb9dc8ab7150f6a9addbb50bab" // Your API Key
+        });
+
+        document.getElementById("loginButton").onclick = function() {
+        auth.login();
+        };
+    });
+    </script>
+  
+</head>
+<body class="overflow-y-scroll snap-y snap-mandatory h-screen scroll-smooth">
+    <section id="anim" class="flex items-center justify-center w-full min-h-screen">
+        <lottie-player 
+            src="https://lottie.host/dd2eca9b-c056-4903-bbbc-44619ddc4d6a/VjAd0tsZWE.json" background="transparent" speed="1" direction="1" mode="normal" loop autoplay class="w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
+        </lottie-player>
+    </section> 
+
+    <div x-data="{ hovered: false }">
+        <header id="header" 
+            :style="hovered ? 'background-color: #202e37;' : 'background-color: white;'"
+            class="h-screen min-h-screen relative flex overflow-x-hidden flex-col bg-white justify-center items-center snap-always snap-start transition-colors duration-300">
+            
+            <div id="builds"> 
+                <h1 id="flareRed" 
+                    @mouseenter="hovered = true"
+                    @mouseleave="hovered = false"
+                    :style="hovered ? 'color: #C42348' : 'color: black;'"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold cursor-pointer text-center transition-colors duration-300"> 
+                    FlareRed 
+                </h1>
+            </div>
+            
+            <div class="absolute bottom-0 w-full z-0 h-0" id="building-light">
+                <img :src="hovered ? 'flareblack.png' : 'FlareRed.png'"
+                alt="skyscrapers" class="w-full transition-opacity duration-300" style="object-fit: cover;"/>
+            </div>
+        </header> 
+    </div> 
+    
+    <nav id="navbar" class="hidden fixed top-0 left-0 w-full bg-gradient-to-r from-rose-600 to-red-200 text-white overflow-x-hidden">
+        <div class="container max-w-7xl mx-auto flex justify-between items-center py-6 px-3 sm:px-6 lg:px-8">
+            <div id="logo" class="text-xl font-bold flex items-center"> 
+                <img src="img.png" alt="logo" class="w-7 h-7"> 
+                <p class="px-3 text-2xl md:text-3xl"> FlareRed </p> 
+            </div>
+            <div>
+                <button class="text-white bg-cardinal px-6 py-2 md:py-3 font-lato rounded-md text-lg sm:text-sm md:text-xl font-bold"> 
+                    <a href="#" target="_blank"> Sign Up for Free </a> 
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="content" class="h-screen bg-lgrey p-12">
+        <div class="flex flex-col md:flex-row items-center justify-between p-8 bg-lgrey min-h-screen">
+            <!-- Left section with text and button -->
+            <div class="md:w-1/2 text-center md:text-left space-y-6">
+              <!-- Tagline above -->
+              <span class="inline-block bg-red-100 text-black text-lg font-large py-2 px-5 rounded-full outline">
+                Free. Practical. There when you need it the most.
+              </span>
+              
+              <!-- Headline -->
+              <h1 class="text-6xl font-bold text-darkgrey leading-tight">
+                Flare Up. <br/> Stay Safe. <br/> Keep Moving.
+              </h1>
+          
+              <!-- Download button -->
+              <a href="#" class="bg-cardinal text-white text-2xl font-semibold py-5 px-10 rounded-lg inline-block">
+                Download Now
+              </a>
+          
+              <!-- Terms and conditions -->
+              <p class="text-gray-500 text-sm">
+                By using FlareRed, you agree to its <a href="#" class="text-cardinal underline">Terms & Conditions</a>.
+              </p>
+            </div>
+          
+            <!-- Right section with phones -->
+            <div class="md:w-1/2 mt-8 md:mt-0 h-full w-full flex justify-center md:justify-end space-x-5 pr-10">
+              <!-- Phone images (replace with your actual image sources) -->
+              <img src="white.png" alt="Phone 1" class="w-1/3 object-contain " style="height: auto; width: 61%;"/>
+              <img src="black.png" alt="Phone 2" class="w-1/3 object-contain" style="height: auto; width: 45%";"/>
+            </div>
+          </div>
+    </section> 
+
+    <div class="bg-gray-50 py-12 px-8 md:px-12 lg:pl-16 lg:pr-2">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
+          <!-- Left Content: Text -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Your Personal Safety Network</h2>
+            <p class="text-lg text-gray-600 mb-8">
+              FlareRed syncs with your phone’s contacts, allowing you to build a trusted circle of friends and family for emergencies. Add or remove contacts easily from the settings tab, ensuring your safety network is always up to date. The app integrates seamlessly with your device’s notification system, so alerts and real-time location updates reach your group instantly, no matter where they are. With end-to-end encryption, your messages and shared locations are kept secure and private, ensuring that only your trusted contacts have access.
+            </p>
+            
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Designed for Women, Built for Trust</h2>
+            <p class="text-lg text-gray-600">
+              FlareRed was designed with feedback from women travelers and safety experts to address the unique challenges faced by solo female adventurers. From the UI/UX design to advanced security protocols, the app is built for seamless user experience and maximum privacy. This ensures you can alert your contacts even in high-pressure situations without drawing attention.
+            </p>
+          </div>
+          
+          <!-- Right Content: Image -->
+          <div class="flex justify-center items-center">
+            <img class="rounded-lg" src="secondscreen.png" alt="Phone Mockup" style="max-height: 600px; width: auto;">
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="bg-gray-50 py-12 px-8 md:px-12 lg:pl-2 lg:pr-16">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          
+          <!-- Left Content: Image -->
+          <div class="flex justify-center">
+            <img class="rounded-lg" src="mapphone.png" alt="Phone Mockup" style="max-height: 600px; width: auto;">
+          </div>
+          
+          <!-- Right Content: Text -->
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Real-Time Location Sharing</h2>
+            <p class="text-lg text-gray-600 mb-8">
+              FlareRed enables precise, real-time tracking through advanced geolocation APIs, like Leaflet, HTML Geolocation, and Socket.io. When you activate a Flare—an emergency alert signal—a secure, private link is sent to your selected contacts, allowing them to view your exact location on an interactive map. The flare system works seamlessly, ensuring your safety group is instantly notified. Each flare also comes with time-stamped updates, so your network can track any changes in your movement. The flare technology is optimized to use minimal battery while maintaining continuous monitoring for prolonged safety.
+            </p>
+            
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Safety Beyond Boundaries</h2>
+            <p class="text-lg text-gray-600">
+              FlareRed leverages cutting-edge location technologies to provide safety wherever you go. Whether you’re in a remote village or navigating urban environments, the app’s geolocation services ensure constant awareness of your whereabouts. FlareRed’s adaptive design works across different networks and regions, and its compatibility with various devices ensures that your safety is never compromised, no matter the circumstances.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <footer class="bg-gray-800 text-gray-200 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- About Section -->
+            <div>
+              <h3 class="text-lg font-bold mb-4">About FlareRed</h3>
+              <p class="text-gray-400">
+                FlareRed is your personal safety network, designed to keep you and your loved ones safe through real-time location sharing and advanced emergency alerts.
+              </p>
+            </div>
+      
+         
+            
+      
+            <!-- Subscribe Section -->
+            <div class="">
+              <h3 class="text-lg font-bold mb-4">Stay Updated</h3>
+              <p class="text-gray-400 mb-4">Subscribe to receive updates about new features and safety tips.</p>
+              <form class="flex space-x-2">
+                <input class="w-full px-4 py-2 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-red-500" type="email" placeholder="Your email">
+                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Subscribe</button>
+              </form>
+            </div>
+          </div>
+      
+          <!-- Bottom Bar -->
+          <div class="mt-8 border-t border-gray-700 pt-8 text-center md:text-left">
+            <p class="text-gray-400">&copy; 2024 FlareRed. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+      
+
+    <script src="script.js"></script>
+</body>
+</html>
