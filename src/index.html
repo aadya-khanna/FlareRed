@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Flare Red</title>
+  <title> FlareRed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet">
-  <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,6 +13,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
   <script src="https://unpkg.com/@propelauth/javascript@latest"></script>
+  <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   
   <script>
     document.addEventListener('DOMContentLoaded', (event) => {
@@ -30,7 +34,7 @@
   
 </head>
 <body class="overflow-y-scroll snap-y snap-mandatory h-screen scroll-smooth">
-    <section id="anim" class="flex items-center justify-center w-full min-h-screen">
+    <section id="anim" class="flex items-center justify-center w-full min-h-screen bg-[url('streetdark.png')]">
         <lottie-player 
             src="https://lottie.host/dd2eca9b-c056-4903-bbbc-44619ddc4d6a/VjAd0tsZWE.json" background="transparent" speed="1" direction="1" mode="normal" loop autoplay class="w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl">
         </lottie-player>
@@ -106,10 +110,6 @@
           </div>
     </section> 
 
-    
-    <div class="w-full border-t-4 border-gray-800 my-12"></div>
-
-
     <div class="bg-gray-50 py-12 px-8 md:px-12 lg:pl-16 lg:pr-2">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
           <!-- Left Content: Text -->
@@ -164,7 +164,7 @@
             <div>
               <h3 class="text-lg font-bold mb-4">About FlareRed</h3>
               <p class="text-gray-400">
-                FlareRed is your personal safety network, designed to keep you and your loved ones safe through real-time location sharing and advanced emergency alerts.
+                FlareRed is your personal safety network, designed to keep you and your loved ones safe through real-time location sharing and advanced emergency alerts.  <br><br> <a href="https://www.figma.com/proto/FbKWLC6nHjzovJhZnoSRXN/FlareRed-Visuals?node-id=1-20&node-type=canvas&t=Ki5SjBTbHqAQwPsv-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" class="hover:text-cardinal font-extrabold text-2xl text-white"> Download </a>
               </p>
             </div>
       
@@ -177,7 +177,7 @@
               <p class="text-gray-400 mb-4">Subscribe to receive updates about new features and safety tips.</p>
               <form class="flex space-x-2">
                 <input class="w-full px-4 py-2 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-red-500" type="email" placeholder="Your email">
-                <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition">Subscribe</button>
+                <button class="bg-cardinal hover:bg-red-600 text-white px-4 py-2 rounded transition">Subscribe</button>
               </form>
             </div>
           </div>

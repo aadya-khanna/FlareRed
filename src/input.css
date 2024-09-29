@@ -17,7 +17,6 @@ body {
 }
 
 #anim {
-  background-color: #111;
   display: flex;
   justify-content: center; /* Aligns the Lottie player to the bottom */
   align-items: flex-end; /* Aligns the content to the bottom */
